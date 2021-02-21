@@ -18,6 +18,9 @@ This project is in a really early stage so there's still a lot of work to do and
 -What's Next?
 .As of now I'm trying to make this as user friendly as possible. In a far future I might build an UI and make this a programm. As of now(Feb20210) I'm working on how to bypass captcha, wish me luck xd
 
+----UPDATES-----
+-21.02.2021 Added Supreme Support
+
 
 
 Contact/Updates on Twitter @p0ttercs

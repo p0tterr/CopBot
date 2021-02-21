@@ -12,16 +12,12 @@ public class WebForm extends PageObject {
     //@FindBy (id = "mat-input-0")
     //private WebElement input;
 
-
+    // FOOTLOCKER!!!
     @FindBy(xpath = "//span[contains(.,'41')]")
     private WebElement Size;
-
-    @FindBy(xpath = "//form[@id='add-to-cart-form']/div/div[3]/div/div[7]/button/span")
+    @FindBy(xpath = "//form/ul/li[3]/button")
     private WebElement AddToCart;
-
-
-
-    @FindBy(xpath = "//header[@id='flcomponentheaderfull']/div/div/span/div/div[2]/div/div[2]/div[7]/div/a/span")
+    @FindBy(xpath = "//a[contains(text(),'Warenkorb ansehen')]")
     private WebElement Comprar;
 
     //@FindBy(xpath = "//label[contains(.,'Ja, ich akzeptiere die Allgemeinen Geschäftsbedingungen und bestätige, dass ich die Foot Locker Datenschutzbestimmungen gelesen und verstanden habe.*')]")

@@ -18,8 +18,8 @@ public class TestPlan {
 
     @BeforeSuite
     public static void main(String[] args) {
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("debuggerAddress", "localhost:58223");
+        //ChromeOptions options = new ChromeOptions();
+        //options.setExperimentalOption("debuggerAddress", "localhost:58223");
         ChromeDriver driver = new ChromeDriver();
 
         // ChromeDriver location set up in Utils class
@@ -38,8 +38,8 @@ public class TestPlan {
 
     @Test(testName = "J1")
     public static void submitEinsatz() {
-        ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("debuggerAddress", "localhost:51277");
+        //ChromeOptions options = new ChromeOptions();
+        //options.setExperimentalOption("debuggerAddress", "localhost:51277");
         ChromeDriver driver = new ChromeDriver();
 
         driver.get(Utils.BASE_URL);
@@ -54,10 +54,7 @@ public class TestPlan {
 
     }
 
-    @Test(testName = "SupremeBot")
-    public static void SupBot(){
 
-    }
 
     @AfterSuite
     public static void cleanUp(){

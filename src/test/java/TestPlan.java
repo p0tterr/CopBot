@@ -24,7 +24,7 @@ public class TestPlan {
 
         // ChromeDriver location set up in Utils class
         System.setProperty("webdriver.chrome.driver", Utils.CHROME_DRIVER_LOCATION);
-        driver.get(Utils.BASE_URL);
+        driver.get(Utils.FL_URL);
         WebForm webForm = new WebForm(driver);
         webForm.SelecSize();
         webForm.AddToCart();
@@ -39,10 +39,10 @@ public class TestPlan {
     @Test(testName = "J1")
     public static void submitEinsatz() {
         //ChromeOptions options = new ChromeOptions();
-        //options.setExperimentalOption("debuggerAddress", "localhost:51277");
+        //options.setExperimentalOption("debuggerAddress", "localhost:53863");
         ChromeDriver driver = new ChromeDriver();
 
-        driver.get(Utils.BASE_URL);
+        driver.get(Utils.FL_URL);
         WebForm webForm = new WebForm(driver);
         webForm.SelecSize();
         webForm.AddToCart();
@@ -54,11 +54,27 @@ public class TestPlan {
 
     }
 
+    @Test(testName = "Supreme")
+    public static void SupremeBot(){
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("debuggerAddress", "localhost:53863");
+        ChromeDriver driver = new ChromeDriver();
+
+        driver.get(Utils.SUP_URL);
+        WebForm webForm = new WebForm(driver);
+        webForm.SelectProduct();
+        driver.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
+        webForm.AddProduct();
+        webForm.BuyProduct();
+
+    }
+
 
 
     @AfterSuite
     public static void cleanUp(){
-        //driver.manage().deleteAllCookies();
+
+        // river.manage().deleteAllCookies();
 
 
     }

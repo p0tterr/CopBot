@@ -20,6 +20,7 @@ This project is in a really early stage so there's still a lot of work to do and
 
 ----UPDATES-----
 -21.02.2021 Added Supreme Support
+-22.02.2021 Added autofill function for Supreme
 
 
 

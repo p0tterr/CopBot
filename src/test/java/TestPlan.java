@@ -72,6 +72,7 @@ public class TestPlan {
 
 
         // driver.close();
+        //driver.manage().deleteAllCookies();
 
     }
 
@@ -79,8 +80,8 @@ public class TestPlan {
     @AfterSuite
     public static void cleanUp(){
 
-        ChromeDriver driver = new ChromeDriver();
-        driver.manage().deleteAllCookies();
+        
+        
 
     }
 }

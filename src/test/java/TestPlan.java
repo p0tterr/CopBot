@@ -1,4 +1,3 @@
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,7 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
-
 import java.sql.Driver;
 import java.util.concurrent.TimeUnit;
 
@@ -18,28 +16,18 @@ public class TestPlan {
 
     @BeforeSuite
     public static void main(String[] args) {
-        //ChromeOptions options = new ChromeOptions();
-        //options.setExperimentalOption("debuggerAddress", "localhost:58223");
-        ChromeDriver driver = new ChromeDriver();
 
         // ChromeDriver location set up in Utils class
         System.setProperty("webdriver.chrome.driver", Utils.CHROME_DRIVER_LOCATION);
-        driver.get(Utils.FL_URL);
-        WebForm webForm = new WebForm(driver);
-        webForm.SelecSize();
-        webForm.AddToCart();
-        //webForm.enterEinsatz();
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-         webForm.Comprar();
-         //webForm.CheckBox();
-        // webForm.SendOrder();
+
+
     }
 
 
-    @Test(testName = "J1")
+    @Test(testName = "Footlocker")
     public static void submitEinsatz() {
-        //ChromeOptions options = new ChromeOptions();
-        //options.setExperimentalOption("debuggerAddress", "localhost:53863");
+        ChromeOptions options = new ChromeOptions();
+        options.setExperimentalOption("debuggerAddress", "localhost:");
         ChromeDriver driver = new ChromeDriver();
 
         driver.get(Utils.FL_URL);
@@ -48,17 +36,14 @@ public class TestPlan {
         webForm.AddToCart();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         webForm.Comprar();
-        //webForm.CheckBox();
-        //webForm.SendOrder();
-
-
     }
 
     @Test(testName = "Supreme")
     public static void SupremeBot(){
         ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("debuggerAddress", "localhost:53863");
+        options.setExperimentalOption("debuggerAddress", "localhost:");
         ChromeDriver driver = new ChromeDriver();
+
 
         driver.get(Utils.SUP_URL);
         WebForm webForm = new WebForm(driver);
@@ -67,15 +52,35 @@ public class TestPlan {
         webForm.AddProduct();
         webForm.BuyProduct();
 
-    }
+        //wait for pay page to load
+        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
 
+        //Autofill
+        webForm.enterName();
+        webForm.enterEmail();
+        webForm.enterPhone();
+        webForm.enterStreet();
+        webForm.enterCity();
+        webForm.enterZip();
+        webForm.enterCountry();
+        webForm.enterCardNr();
+        webForm.enterCardMonth();
+        webForm.enterCardYear();
+        webForm.enterCardCode();
+        webForm.AcceptAGBS();
+        webForm.ConfirmPurchase();
+
+
+        // driver.close();
+
+    }
 
 
     @AfterSuite
     public static void cleanUp(){
 
-        // river.manage().deleteAllCookies();
-
+        ChromeDriver driver = new ChromeDriver();
+        driver.manage().deleteAllCookies();
 
     }
 }
